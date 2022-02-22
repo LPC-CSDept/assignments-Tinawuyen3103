@@ -6,8 +6,11 @@ int main()
 {
  
      int a = rand();
+     cout << "a = " << setprecision(5) << a;
      int b = rand();
+     cout << "b = " << setprecision(5) << b;
      int c =rand();
+     cout << "c = " << setprecision(5) << c;
      int sum = a + b + c;
      cout << "\nsum = " << setprecision(5) << sum;
      int average = sum/3;
