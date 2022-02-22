@@ -1,21 +1,23 @@
 #include <iostream>
-#include <iomanip>
-
 using namespace std;
 
 int main()
 {
     int males;
     int females;
-    int total = males + females;
-    double malesPercent = (males/total)*100;
-    double femalesPercent = (females/total)*100;
-    
-    cout << "Enter the number of males ";
+    cout << "Enter the number of males: ";
     cin >> males;
-    cout << "Enter the number of females ";
+    cout << "Enter the number of females: ";
     cin >> females;
     
-    cout << "The percentage of males in the class is " << malesPercent << "%";
-    cout << "\nThe percentage of females in the class is " << femalesPercent << "%";
+    int total = males + females;
+    
+    double malesPercent = (males * 100.0 / total);
+    double femalesPercent = (females * 100.0 / total);
+    
+
+    cout << "The percentage of males in the class is: " << malesPercent << "%" << endl;
+    cout << "The percentage of females in the class is: " << femalesPercent << "%" << endl;
+    
+return 0;
 }
