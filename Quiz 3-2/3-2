@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+using namespace std;
+int main()
+{
+ 
+     int a = rand();
+     int b = rand();
+     int c =rand();
+     int sum = a + b + c;
+     cout << "\nsum = " << setprecision(5) << sum;
+     int average = sum/3;
+     cout << "\naverage = " << setprecision(5) << average;
+    return 0;
+}
