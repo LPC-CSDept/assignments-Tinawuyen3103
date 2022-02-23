@@ -1,19 +1,24 @@
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
+#include<iostream>
+#include<cstdlib>
+#include<iomanip>
 using namespace std;
-int main()
+int main() 
 {
- 
-     int a = rand();
-     cout << "a = " << setprecision(5) << a;
-     int b = rand();
-     cout << "b = " << setprecision(5) << b;
-     int c =rand();
-     cout << "c = " << setprecision(5) << c;
-     int sum = a + b + c;
-     cout << "\nsum = " << setprecision(5) << sum;
-     int average = sum/3;
-     cout << "\naverage = " << setprecision(5) << average;
-    return 0;
+   int max;
+   max = 100;
+   srand(time(0));
+   int a = rand()%max;
+   cout << "The random number is: "<< a;
+   int b = rand()%max;
+   cout << "\nThe random number is: "<< b;
+   int c = rand()%max;
+   cout << "\nThe random number is: "<< c;
+   
+   int sum = a + b + c;
+   cout << "\nThe sum is : " << sum << endl;
+   
+   double average = sum/3;
+   cout << "The average is : " << setprecision(5) << average;
+   return 0;
+   
 }
