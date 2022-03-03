@@ -9,12 +9,13 @@ int main()
     cout << "Enter the weight and distance: " << endl;
     cin >> weight >> distance;
     
-    double costdistance1 = distance*1.10;
-    double costdistance2 = distance*2.20;
-    double costdistance3 = distance*3.70;
-    double costdistance4 = distance*4.80;
+    double costdistance1 = (distance/500)*1.10;
+    double costdistance2 = (distance/500)*2.20;
+    double costdistance3 = (distance/500)*3.70;
+    double costdistance4 = (distance/500)*4.80;
     
-    if (weight > -1 && distance >= 500){
+    if (weight > 0 && distance >= 500){
+        if (distance <= 3000) {
         if (weight > 0 && weight <= 2)
         cout << "The total cost for " << weight << " kg is $" << costdistance1 <<endl;
         
@@ -31,7 +32,8 @@ int main()
         cout << "Overweight" << endl;
         
     }
+    }
 
 
-    return 0;
+    cout << "We don't accept distance over 3000 miles." << endl;
 }
