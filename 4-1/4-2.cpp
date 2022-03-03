@@ -12,13 +12,13 @@ int a;
   double cost4 = (99*a)*(0.5);
   if (a > -1) {
     
-    if(a > 0 && a < 20)
+    if(a > 0 && a <= 19)
     cout << "The total cost is $" << cost1 << endl;
 
-    else if (a > 19 && a < 50)
+    else if (a > 19 && a <= 49)
     cout << "The total cost is $" << cost2 << endl;
 
-    else if (a > 49 && a < 100)
+    else if (a > 49 && a <= 99)
     cout << "The total cost is $" << cost3 << endl;
   
     else
