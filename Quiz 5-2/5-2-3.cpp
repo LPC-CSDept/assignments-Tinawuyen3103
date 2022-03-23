@@ -18,4 +18,8 @@ int main()
             break;
         }
     }
-    
+    if (flag)
+        cout << "Not prime number " << endl;
+    else
+        cout << "Prime number " << endl;  
+}
