@@ -15,3 +15,20 @@ ofstream ofs;
         cerr <<"File open Error \n";
         exit(0);
     } 
+    cout << "Employee ID: ";
+    cin >> Employee_ID;
+    ofs << Employee_ID << endl;
+    
+    cout << "Employee Name: ";
+    cin >> Employee_Name;
+    ofs << Employee_Name << endl;
+    
+    cout << "Department: ";
+    cin >> Department_name;
+    ofs << Department_name << endl;
+    
+    cout << "Salary: ";
+    cin >> salary;
+    ofs << salary << endl; 
+
+}
