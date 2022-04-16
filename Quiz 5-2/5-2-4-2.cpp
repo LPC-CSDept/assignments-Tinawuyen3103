@@ -13,6 +13,14 @@ int main()
     double tsum, tavg;
 
     ifs. open("employee.txt");
+
+    // When you read the string value from a file,
+    // You should keep the same order as it is written in that file.
+    // In your file, first string is ID, and then name, dept, and salrary.
+
+    // Instead of cin, you should use "ifs" as you declcared at line 15.
+    // ifs >> ID1 >> Em_name1 >> De_name1 >> salary ;
+    
     cout << "Employee_ID 1: ";
     cin >> ID1;
     cout << "Employee_ID 2: ";
