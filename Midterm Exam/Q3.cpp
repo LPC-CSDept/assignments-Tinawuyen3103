@@ -2,12 +2,11 @@
 #include <fstream>
 using namespace std;
 
-int precedingNum; 
-
 int getRdnum() {
 	return 1 + (rand() % 50);
 }
 
+int precedingNum; 
 int isGreater(int n) {
 	if (n > precedingNum) {
 		return 1;
