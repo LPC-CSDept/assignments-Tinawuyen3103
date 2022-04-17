@@ -16,7 +16,6 @@ int main()
     }
     cout << "Enter the total number of students: "<<endl;
     cin >> N;
-    ofs << N;
 
     for(int i=0; i<N; i++) {
         cout << "Enter the student name " << i+1 << ": " ;
