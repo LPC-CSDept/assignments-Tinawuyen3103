@@ -5,14 +5,7 @@ int getInput(int &n1, int &n2);
 int isSame(int n1, int n2);
 int intDivision(int n1, int n2);
 int fileWrite(int n1, int n2, int result);
-int main()
-{
-    int n1, n2, result;
-    getInput(n1, n2);
-    result = intDivision(n1, n2);
-    fileWrite(n1, n2, result);
-    return 0;
-}
+
 int getInput(int &n1, int &n2)
 {
     cout << "Enter two numbers: ";
@@ -36,5 +29,13 @@ int fileWrite(int n1, int n2, int result)
     outfile.open("question5.txt");
     outfile << "The division of " << n1 << " and " << n2 << " is " << result << endl;
     outfile.close();
+    return 0;
+}
+int main()
+{
+    int n1, n2, result;
+    getInput(n1, n2);
+    result = intDivision(n1, n2);
+    fileWrite(n1, n2, result);
     return 0;
 }
