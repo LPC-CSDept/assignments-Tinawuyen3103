@@ -13,19 +13,20 @@ int main()
 	
 	while (i <= 10) 
 	{
-	    cout << "Guess a number between 1 to 100: " << endl;
-	    cin >> guess; 
+		cout << "Guess a number between 1 to 100: " << endl;
+		cin >> guess; 
 	    
-		if (guess == random) {
-			cout << "You guessed right!" << endl;
-		}
-		else if (guess < random)
+		if (guess < random)
 		{
 			cout << "Your guess is too low, try again." << endl;
 		}
 		else if (guess > random)
 		{
 			cout << "Your guess is too high, try again." << endl;
+		}
+		else
+		{
+			cout << "You guessed right!" << endl;
 		}
 	}
 	return 0;
