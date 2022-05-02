@@ -17,20 +17,16 @@ int main()
 	    cin >> guess; 
 	    
 		if (guess == random) {
-		    
+			cout << "You guessed right!" << endl;
 		}
-	    else if (guess < random)
-	    {
-	        cout << "Your guess is too low, try again." << endl;
-	    }
-	    else if (guess > random)
-	    {
-	        cout << "Your guess is too high, try again." << endl;
-	    }
-	    else
-	    {
-	        cout << "You guessed right!" << endl;
-	    }
+		else if (guess < random)
+		{
+			cout << "Your guess is too low, try again." << endl;
+		}
+		else if (guess > random)
+		{
+			cout << "Your guess is too high, try again." << endl;
+		}
 	}
 	return 0;
 }
