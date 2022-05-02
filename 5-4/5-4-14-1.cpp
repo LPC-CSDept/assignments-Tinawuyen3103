@@ -11,7 +11,6 @@ int main () {
     cin >> N;
     
     srand(time(0));
-    int value;
     ofstream file ("testfile.txt");
 
     int i = 0;
@@ -19,7 +18,6 @@ int main () {
     {
          
         i++;
-        cout << i;
         file << (rand() % 100) + 1 << "\n";
         
     }
