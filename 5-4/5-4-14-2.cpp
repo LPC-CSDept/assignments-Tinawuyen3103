@@ -21,12 +21,13 @@ int main () {
 		a[i] = (rand() % 100) + 1;
 		file << a[i] << "\n";
 		sum = sum + a[i];
-		
+		{
 		if (a[i] < min) {
 			min = a[i];
 		}
 		if (a[i] > max) {
 			max = a[i];
+		}
 		}
 	}
 	file.close();
