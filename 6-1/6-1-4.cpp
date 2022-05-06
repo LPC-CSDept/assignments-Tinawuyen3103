@@ -17,13 +17,16 @@ int main() {
         } while (N != -1);
 }
 int getsum(int N) {
-        int i;
-        int max, min, num, sum;
-        for (i = 0; i < N; i++)  
+        int num;
+        int min, max;
+        int sum = 0;
+        int result = 0;
+        for (int i = 0; i < N; i++)  
         {
-                cout << "Enter your " << i + 1 << "th number\n";
+                cout << "Enter your numbers \n";
                 cin >> num; 
-                sum += num;  
+                sum += num;
+                
                 if (i == 0) {
                         min = num;  
                         max = num;
@@ -33,6 +36,7 @@ int getsum(int N) {
                 if (max < num)     
                         max = num; 
         }
-        sum = sum - min - max;
+        result = max + min;
+        sum = sum - result;
         return sum;
 }
