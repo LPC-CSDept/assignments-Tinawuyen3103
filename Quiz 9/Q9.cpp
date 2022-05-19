@@ -24,7 +24,7 @@ void OpenFiles(EmployeeInfos Files)
     int day, year;
     ofstream ofs;
 
-    ofs.open("stuRecord.txt");
+    ofs.open("employee.txt");
     if (!ofs){
         cout << "File Open Error\n";
         exit(0);
