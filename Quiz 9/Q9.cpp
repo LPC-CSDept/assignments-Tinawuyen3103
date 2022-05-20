@@ -28,6 +28,12 @@ int main() {
     ofstream ofs;
     int N;
     
+    ofs.open("employee.txt");
+    if (!ofs){
+        cout << "File Open Error\n";
+        exit(0);
+    }
+    
     cout << "Enter the number of employees : ";
     cin >> N;
     
@@ -43,19 +49,11 @@ int main() {
     cin >> e.DepName;
     cout << "Enter the date which the employee starts to work in this company(Mon Day Year) : ";
     cin >> e.month >> e.day >> e.year;
+    ofs << e.ID << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
     }
-    
-    ofs.open("employee.txt");
-    if (!ofs){
-        cout << "File Open Error\n";
-        exit(0);
-    }
-        ofs << e.ID << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
-    ofs.close();
+        ofs.close();
      
-    // Printing employee details 
-    cout << "\n*** Employee Details ***" << endl;
-    cout << "Name : " << e.firstname << " " << e.lastname << endl << "Salary : " << e.salary << endl;
-    cout << "Employee ID : " << e.ID << endl << "Department : " << e.DepName;
+    // Printing ConditionedEmployees
+    
     return 0;
 }
