@@ -109,9 +109,8 @@ int main() {
     }
     
     EmployeeInfos e[N];
-    int EmployeeNumber = N;
     
-	ConstructStructure(e, EmployeeNumber);
-	GreaterSalary(e, EmployeeNumber);
-	ComputerDepartment(e, EmployeeNumber);
+	ConstructStructure(e, N);
+	GreaterSalary(e, N);
+	ComputerDepartment(e, N);
 }
