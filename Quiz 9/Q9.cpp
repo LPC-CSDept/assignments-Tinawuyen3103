@@ -17,9 +17,9 @@ void ConditionedEmployees(EmployeeInfos e[], int N) {
     for (int i = 0; i < N; i++)
     {
         if (e[i].salary > 100000)
-        cout << e[i].firstname << " " << e[i].lastname;
+        cout << "The employee with salary higher than $100,000 are : " << e[i].firstname << " " << e[i].lastname;
         if (e[i].DepName == "Computer")
-        cout << e[i].firstname << " " << e[i].lastname;
+        cout << "The employee who works in the Computer Department are : " << e[i].firstname << " " << e[i].lastname;
     }
 }
  
