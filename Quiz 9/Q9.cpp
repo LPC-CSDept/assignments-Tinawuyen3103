@@ -113,4 +113,6 @@ int main() {
 	ConstructStructure(e, N);
 	GreaterSalary(e, N);
 	ComputerDepartment(e, N);
+	
+	return 0;
 }
