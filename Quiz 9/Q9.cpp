@@ -12,6 +12,16 @@ struct EmployeeInfos {
     string month;
     int day, year;
 };
+
+void ConditionedEmployees(EmployeeInfos e[], int N) {
+    for (int i = 0; i < N; i++)
+    {
+        if (e[i].salary > 100000)
+        cout << e[i].firstname << " " << e[i].lastname;
+        if (e[i].DepName == "Computer")
+        cout << e[i].firstname << " " << e[i].lastname;
+    }
+}
  
 int main() {
     EmployeeInfos e;
