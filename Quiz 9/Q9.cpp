@@ -66,7 +66,8 @@ void GreaterSalary(EmployeeInfos employees[], int N)
     cout << "Employees with salary higher than $100,000 are:" << endl;
     for (int i = 0; i < N; i++) {
         if (employees[i].salary > 100000) {
-            cout << employees[i].firstname << " " << employees[i].lastname << endl;
+            cout << employees[i].ID << " " << employees[i].firstname << " " << employees[i].lastname << " " << employees[i].salary << " ";
+            cout << employees[i].DepName << " " << employees[i].month << " " << employees[i].day << " " << employees[i].year << endl;
         }
     }
 }
@@ -77,7 +78,8 @@ void ComputerDepartment(EmployeeInfos employees[], int N)
     cout << "Employees who work in the Computer Department are:" << endl;
     for (int i = 0; i < N; i++) {
         if (employees[i].DepName == "Computer") {
-            cout << employees[i].firstname << " " << employees[i].lastname << endl;
+            cout << employees[i].ID << " " << employees[i].firstname << " " << employees[i].lastname << " " << employees[i].salary << " ";
+            cout << employees[i].DepName << " " << employees[i].month << " " << employees[i].day << " " << employees[i].year << endl;
         }
     }
 }
