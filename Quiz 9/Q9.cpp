@@ -12,38 +12,33 @@ struct EmployeeInfos {
     string month;
     int day, year;
 };
-
-void OpenFiles(EmployeeInfos Files)
-{
-    int N;
-    int ID;
-    string firstname, lastname;
-    int salary;
-    string DepName;
-    string month;
-    int day, year;
+ 
+int main() {
+    EmployeeInfos e;
     ofstream ofs;
-
+    
+    cout << "Enter employee ID : ";
+    cin >> e.ID;
+    cout << "Enter the first name and last name of employee : ";
+    cin >> (e.firstname) >> (e.lastname);
+    cout << "Enter salary of employee : ";
+    cin >> e.salary;
+    cout << "Enter working department name : ";
+    cin >> e.DepName;
+    cout << "Enter the date which the employee starts to work in this company(Mon Day Year) : ";
+    cin >> e.month >> e.day >> e.year;
+    
     ofs.open("employee.txt");
     if (!ofs){
         cout << "File Open Error\n";
         exit(0);
     }
-    cout << "Enter the total number of employees: "<<endl;
-    cin >> N;
-
-    for(int i=0; i<N; i++) {
-        cout << "Enter the employee's ID " << i+1 << ": " ;
-        cin >> ID;
-        cout << "Enter the first name and last name for" << ID << ":" ;
-        cin >> firstname >> lastname;
-        cout << "Enter the employee's salary " << ":";
-        cin >> salary;
-        cout << "Enter the employee's department name " << ":";
-        cin >> DepName;
-        cout << "Enter the date which the employee starts to work in this company(Mon Day Year) " << ":";
-        cin >> month >> day >> year;
-        ofs << ID << " " << firstname << " " << lastname << " " << salary << " " << DepName << " " << month << " " << day << " " << year << endl;
-    }
+        ofs << e.ID << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
     ofs.close();
+     
+    // Printing employee details 
+    cout << "\n*** Employee Details ***" << endl;
+    cout << "Name : " << e.firstname << " " << e.lastname << endl << "Salary : " << e.salary << endl;
+    cout << "Employee ID : " << e.ID << endl << "Department : " << e.DepName;
+    return 0;
 }
