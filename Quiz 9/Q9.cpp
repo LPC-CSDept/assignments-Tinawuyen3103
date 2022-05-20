@@ -7,7 +7,7 @@
 using namespace std;
 
 struct EmployeeInfos {
-    int ID;
+    int ID[6];
     string firstname, lastname;
     int salary;
     string DepName;
@@ -28,7 +28,7 @@ void ConstructStructure(EmployeeInfos employee[], int N)
             size_t pos = 0;
             while ((pos = tp.find(" ")) != string::npos) {
                 if (i == 0) {
-                    employee.ID = stoi(tp.substr(0, pos));
+                    employee.ID[6] = stoi(tp.substr(0, pos));
                 }
                 else if (i == 1) {
                     employee.firstname = tp.substr(0, pos);
@@ -94,7 +94,7 @@ int main() {
         {
             EmployeeInfos e;
             cout << "Enter employee ID " << i + 1 << ": ";
-            cin >> e.ID;
+            cin >> e.ID[6];
             cout << "Enter the first name and last name of employee with the ID of " << e.ID << ": ";
             cin >> (e.firstname) >> (e.lastname);
             cout << "Enter salary of employee : ";
@@ -103,7 +103,7 @@ int main() {
             cin >> e.DepName;
             cout << "Enter the date which the employee starts to work in this company(Mon Day Year) : ";
             cin >> e.month >> e.day >> e.year;
-            newfile << e.ID << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
+            newfile << e.ID[6] << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
         }
         newfile.close();
     }
@@ -111,7 +111,7 @@ int main() {
     EmployeeInfos e[N];
     int EmployeeNumber = N;
     
-    ConstructStructure(e, EmployeeNumber);
+	ConstructStructure(e, EmployeeNumber);
 	GreaterSalary(e, EmployeeNumber);
 	ComputerDepartment(e, EmployeeNumber);
 }
