@@ -108,7 +108,7 @@ int main() {
         newfile.close();
     }
     
-    EmployeeInfos e[N];
+    EmployeeInfos e[0];
     
 	ConstructStructure(e, N);
 	GreaterSalary(e, N);
