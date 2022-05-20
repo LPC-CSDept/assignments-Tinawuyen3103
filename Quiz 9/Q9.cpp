@@ -16,10 +16,16 @@ struct EmployeeInfos {
 int main() {
     EmployeeInfos e;
     ofstream ofs;
+    int N;
     
-    cout << "Enter employee ID : ";
+    cout << "Enter the number of employees : ";
+    cin >> N;
+    
+    for (int i = 0; i < N; i++) 
+    {
+    cout << "Enter employee ID " << i + 1 << ": ";
     cin >> e.ID;
-    cout << "Enter the first name and last name of employee : ";
+    cout << "Enter the first name and last name of employee with the ID of " << e.ID << ": ";
     cin >> (e.firstname) >> (e.lastname);
     cout << "Enter salary of employee : ";
     cin >> e.salary;
@@ -27,6 +33,7 @@ int main() {
     cin >> e.DepName;
     cout << "Enter the date which the employee starts to work in this company(Mon Day Year) : ";
     cin >> e.month >> e.day >> e.year;
+    }
     
     ofs.open("employee.txt");
     if (!ofs){
