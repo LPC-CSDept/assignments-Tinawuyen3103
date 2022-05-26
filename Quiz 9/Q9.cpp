@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <fstream>
+#include <list>
 
 using namespace std;
 
@@ -13,37 +15,106 @@ struct EmployeeInfos {
     int day, year;
 };
 
-void OpenFiles(EmployeeInfos Files)
+void ConstructStructure(EmployeeInfos employee[], int N)
 {
+    list<EmployeeInfos> employees;
+    fstream newfile;
+    newfile.open("employee.txt", ios::in);
+    if (newfile.is_open()) {
+        string tp;
+        while (getline(newfile, tp)) {
+            int i = 0;
+            EmployeeInfos employee;
+            size_t pos = 0;
+            while ((pos = tp.find(" ")) != string::npos) {
+                if (i == 0) {
+                    employee.ID = stoi(tp.substr(0, pos));
+                }
+                else if (i == 1) {
+                    employee.firstname = tp.substr(0, pos);
+                }
+                else if (i == 2) {
+                    employee.lastname = tp.substr(0, pos);
+                }
+                else if (i == 3) {
+                    employee.salary = stoi(tp.substr(0, pos));
+                }
+                else if (i == 4) {
+                    employee.DepName = tp.substr(0, pos);
+                }
+                else if (i == 5) {
+                    employee.month = tp.substr(0, pos);
+                }
+                else if (i == 6) {
+                    employee.day = stoi(tp.substr(0, pos));
+                }
+                else if (i == 7) {
+                    employee.year = stoi(tp.substr(0, pos));
+                }
+                tp.erase(0, pos + 1);
+                i ++;
+            }
+            employees.push_back(employee);
+        }
+    }
+        newfile.close();
+}
+
+void GreaterSalary(EmployeeInfos employees[], int N)
+{
+
+    cout << "Employees with salary higher than $100,000 are:" << endl;
+    for (int i = 0; i < N; i++) {
+        if (employees[i].salary > 100000) {
+            cout << employees[i].ID << " " << employees[i].firstname << " " << employees[i].lastname << " " << employees[i].salary << " ";
+            cout << employees[i].DepName << " " << employees[i].month << " " << employees[i].day << " " << employees[i].year << endl;
+        }
+    }
+}
+
+void ComputerDepartment(EmployeeInfos employees[], int N)
+{
+    
+    cout << "Employees who work in the Computer Department are:" << endl;
+    for (int i = 0; i < N; i++) {
+        if (employees[i].DepName == "Computer") {
+            cout << employees[i].ID << " " << employees[i].firstname << " " << employees[i].lastname << " " << employees[i].salary << " ";
+            cout << employees[i].DepName << " " << employees[i].month << " " << employees[i].day << " " << employees[i].year << endl;
+        }
+    }
+}
+int main() {
+    fstream newfile;
     int N;
-    int ID;
-    string firstname, lastname;
-    int salary;
-    string DepName;
-    string month;
-    int day, year;
-    ofstream ofs;
 
-    ofs.open("stuRecord.txt");
-    if (!ofs){
-        cout << "File Open Error\n";
-        exit(0);
-    }
-    cout << "Enter the total number of employees: "<<endl;
-    cin >> N;
+    newfile.open("employee.txt", ios::out);
+    if (newfile.is_open()) {
+        cout << "Enter the number of employees : ";
+        cin >> N;
 
-    for(int i=0; i<N; i++) {
-        cout << "Enter the employee's ID " << i+1 << ": " ;
-        cin >> ID;
-        cout << "Enter the first name and last name for" << ID << ":" ;
-        cin >> firstname >> lastname;
-        cout << "Enter the employee's salary " << ":";
-        cin >> salary;
-        cout << "Enter the employee's department name " << ":";
-        cin >> DepName;
-        cout << "Enter the date which the employee starts to work in this company(Mon Day Year) " << ":";
-        cin >> month >> day >> year;
-        ofs << ID << " " << firstname << " " << lastname << " " << salary << " " << DepName << " " << month << " " << day << " " << year << endl;
+        for (int i = 0; i < N; i++) 
+        {
+            EmployeeInfos e;
+            cout << "Enter employee ID " << i + 1 << ": ";
+            cin >> e.ID;
+            cout << "Enter the first name and last name of employee with the ID of " << e.ID << ": ";
+            cin >> (e.firstname) >> (e.lastname);
+            cout << "Enter salary of employee : ";
+            cin >> e.salary;
+            cout << "Enter working department name : ";
+            cin >> e.DepName;
+            cout << "Enter the date which the employee starts to work in this company(Mon Day Year) : ";
+            cin >> e.month >> e.day >> e.year;
+            newfile << e.ID << " " << e.firstname << " " << e.lastname << " " << e.salary << " " << e.DepName << " " << e.month << " " << e.day << " " << e.year << endl;
+        }
+        newfile.close();
     }
-    ofs.close();
+    
+    EmployeeInfos e[0];
+    
+	ConstructStructure(e, N);
+	GreaterSalary(e, N);
+	ComputerDepartment(e, N);
+	
+	return 0;
 }
