@@ -50,3 +50,9 @@ void printstruct(Grade g)
     cout << "Grade " << g.score.grade << endl;
 
 }
+
+//Elaborate algorithm : Declare fstream for ofstream and ifstream class object. Declare string line for writing text file. 
+//Deciding which is the file to copy and which is the file that get the copy. 
+//In this case (grades.txt) will be the file that we're copying, also named as (ini_file). And (grades.bin) is the file that get the copy, named as (out_file).
+//Using the while loop for the system to just read the (ini_file) and get the lines from it, in another words, is to copy the lines from the (grade.txt) file.
+//Then it will print those lines into the (out_file {"grades.bin}). After the system done its part, it will close both files. 
