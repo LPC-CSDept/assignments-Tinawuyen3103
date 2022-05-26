@@ -16,17 +16,28 @@ struct Grade{
 };
 Grade g;
 void printstruct(Grade);
+
 int main()
 {
-    ifstream    ifs;
-
-    ifs.open("grades.bin");
-    if(! ifs ){
-        cout << "File Open Error : Sure that there is the file grades.bin \n";
-        exit(0);
+    fstream    fs;
+    string line;
+    
+    ifstream ini_file {"grades.txt"};
+    ofstream out_file {"grades.bin"};
+    
+    if(ini_file && out_file) {
+ 
+        while(getline(ini_file,line)) {
+            out_file << line << "\n";
+        }
+        cout << "Copy Finished. " << endl;
+    } else {
+        cout << "Cannot read file." << endl;
     }
-
-    while ( ifs.read((char *)&g, sizeof(g))){
+    ini_file.close();
+    out_file.close();
+    
+    while (fs.read((char *)&g, sizeof(g))) {
         printstruct(g);
     }
 }
@@ -34,7 +45,7 @@ void printstruct(Grade g)
 {
     cout << "Name : " << g.first << " " << g.last << "\t" << " SSN: " << g.ssn << "\n";
     cout << "\tScores: " ;
-    for(int i=0; i<N;i++)
+    for(int i = 0; i < N;i++)
         cout << showpoint << setprecision(2) << g.score.sc[i] << "\t" ;
     cout << "Grade " << g.score.grade << endl;
 
